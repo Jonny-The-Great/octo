@@ -205,7 +205,7 @@ constexpr std::array<std::uint8_t, 2> MF_LAST_FRAGMENT     = {0b00100000, 0b0000
  *                     Must be large enough to hold `binarySize` bits (rounded up to bytes). 
  * 
  */ 
-inline GetDataWithBinaryOffsetAndSize(const Ipv4Header& ipv4Header, 
+inline void GetDataWithBinaryOffsetAndSize(const Ipv4Header& ipv4Header, 
                                     const std::uint8_t binaryOffset, 
                                     const std::uint8_t binarySize, 
                                     std::span<std::uint8_t> dataBuffer); 
