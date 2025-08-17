@@ -11,10 +11,9 @@
  * @brief Debug mode for octo_network namespace.  
  *  
  * Debug mode `OCTO_NETWORK_DEBUG_MODE` is used to enforce runtime assertions  
- * that ensure certain conditions are met during the execution of cryptographic  
- * operations. These assertions help catch errors in development or testing by  
- * verifying that input values and sizes are within expected bounds before calling  
- * the underlying Monocypher C functions. 
+ * that ensure certain conditions are met during the execution.   
+ * These assertions help catch errors in development or testing by  
+ * verifying that input values and sizes are within expected bounds. 
  * 
  * Debug mode assertions are typically disabled in release builds to avoid any  
  * runtime performance overhead. 
