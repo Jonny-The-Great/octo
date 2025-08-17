@@ -32,13 +32,13 @@ namespace octo_netcommons {
 inline void GetDataWithBinaryOffsetAndSize(const span<const std::uint8_t> inputData, 
                                            const std::uint8_t binaryOffset, 
                                            const std::uint8_t binarySize, 
-                                           std::span<std::uint8_t> outputBuffer); 
+                                           std::span<std::uint8_t> outputBuffer) 
 { 
     // Zero out the output buffer 
     std::fill(outputBuffer.begin(), outputBuffer.end(), 0); 
 
     // Treat the header as a byte array without copying 
-    const std::uint8_t* bytes = reinterpret_cast<const std::uint8_t*>(&inputData); 
+    const std::uint8_t* bytes = inputData.data(); 
 
     // Extract bits 
     for (std::uint16_t bit = 0; bit < binarySize; ++bit) 
@@ -49,7 +49,7 @@ inline void GetDataWithBinaryOffsetAndSize(const span<const std::uint8_t> inputD
         std::uint8_t bitValue = (bytes[srcByteIndex] >> srcBitOffset) & 0x01; 
         std::uint8_t dstByteIndex = bit / 8; 
         std::uint8_t dstBitOffset = 7 - (bit % 8);  
-        dataBuffer[dstByteIndex] |= (bitValue << dstBitOffset); 
+        outputBuffer[dstByteIndex] |= (bitValue << dstBitOffset); 
 
     } 
 
