@@ -64,6 +64,17 @@ inline void GetDataWithBinaryOffsetAndSize(const span<const std::uint8_t> inputD
     assert(outputBuffer.size() >= requiredOutputBytes && 
            "outputBuffer is too small to hold extracted bits"); 
 #endif 
+
+    if (static_cast<std::size_t>(binaryOffset) + binarySize <= inputData.size() * 8) 
+    { 
+        return void; 
+
+    } 
+    if (outputBuffer.size() >= requiredOutputBytes) 
+    { 
+        return void; 
+
+    } 
     
     // Zero out the output buffer 
     std::fill(outputBuffer.begin(), outputBuffer.end(), 0); 
