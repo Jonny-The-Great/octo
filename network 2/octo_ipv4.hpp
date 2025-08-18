@@ -13,8 +13,8 @@
  * @note All structures are packed to ensure strict conformance to byte alignment as defined in RFC 791. 
  *       The usage of raw byte arrays, etc. allows for system-endian independent access. 
  */ 
-#ifndef OCTO_HPP 
-#define OCTO_HPP 
+#ifndef OCTO_IPV4_HPP 
+#define OCTO_IPV4_HPP 
 
 #include <cstdint> 
 #include <array> 
@@ -263,6 +263,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
