@@ -53,8 +53,8 @@ inline void GetDataWithBinaryOffsetAndSize(const span<const std::uint8_t> inputD
                                            const std::uint8_t binarySize, 
                                            std::span<std::uint8_t> outputBuffer) 
 { 
-    std::size_t requiredOutputBytes = (binarySize + 7) / 8; 
-    std::size_t requiredOutputBytes = (binarySize + 7) / 8; 
+    std::uint16_t requiredOutputBytes = (binarySize + 7) / 8; 
+    std::uint8_t requiredOutputBytes = (binarySize + 7) / 8; 
 #ifdef OCTO_NETWORK_DEBUG_MODE 
     // Ensure that binaryOffset + binarySize doesn't exceed input size in bits 
     assert(static_cast<std::size_t>(binaryOffset) + binarySize <= inputData.size() * 8 && 
