@@ -219,7 +219,7 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
 
 
 /**  
- * @brief Extracts the IPv4 flags and fields from the IPv4 header and stores it in the provided data buffer.  
+ * @brief Changes flags and fields from the IPv4 header.  
  * 
  * This function changes the IPv4 header by using ChangeDataWithBinaryOffsetAndSize    
  * 
@@ -254,6 +254,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
