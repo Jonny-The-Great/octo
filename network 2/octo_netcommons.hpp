@@ -70,7 +70,7 @@ inline void GetDataWithBinaryOffsetAndSize(const span<const std::uint8_t> inputD
         return; 
 
     } 
-    if (outputBuffer.size() >= requiredOutputBytes) 
+    if (outputBuffer.size() < requiredOutputBytes) 
     { 
         return; 
 
