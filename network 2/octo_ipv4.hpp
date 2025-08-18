@@ -57,6 +57,7 @@
 #include <array> 
 #include <span> 
 #include <algorithm>  
+#include "octo_netcommons.hpp" 
 
 namespace octo_network 
 { 
@@ -250,6 +251,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
