@@ -197,7 +197,7 @@ constexpr std::array<std::uint8_t, 2> MF_LAST_FRAGMENT     = {0b00100000, 0b0000
  * This function extracts the version from the IPv4 header by using GetDataWithBinaryOffsetAndSize and places it into the  
  * provided data buffer in big endian order. The version is extracted from the first 4 bits of the `version_and_header_length` field. 
  * 
- * @param ipv4Header The IPv4 header to extract the version from. 
+ * @param ipv4Header The IPv4 header as a raw byte array to extract the bits from. 
  * @param dataBuffer The output buffer to hold the extracted version, provided as a std::span. 
  */ 
 void GetVersion(const Ipv4Header& ipv4Header, std::span<std::uint8_t> dataBuffer); 
@@ -230,6 +230,7 @@ void GetDestinationAddress(const Ipv4Header& ipv4Header, std::span<std::uint8_t>
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
