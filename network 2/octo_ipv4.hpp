@@ -21,17 +21,9 @@
 #include <span> 
 #include <algorithm>  
 
-namespace octo_network 
-{ 
-
-namespace ipv4 
-{ 
-
-namespace container 
-{ 
-
 /** 
- * @brief Represents an IPv4 header according to RFC 791. 
+ * 
+ * @brief Represents an IPv4 headers memmory layout according to RFC 791. 
  * 
  * @par Memory Layout (Offset and Size in Bytes) 
  * | Offset | Size | Field                      | 
@@ -47,7 +39,41 @@ namespace container
  * | 12     | 4    | sourceAddress              | 
  * | 16     | 4    | destinationAddress         | 
  * Total size: 20 bytes (without options). 
- */ 
+ * 
+ * @par Memory Layout (Offset and Size in Bits) 
+ * | Offset | Size | Field               | 
+ * |--------|------|---------------------| 
+ * | 0      | 4    | Version             | 
+ * | 4      | 4    | IPv4 Header Length  | 
+ * | 8      | 3    | Precedence          | 
+ * | 11     | 1    | Delay               | 
+ * | 12     | 1    | Throughput          | 
+ * | 13     | 1    | Reliability         | 
+ * | 14     | 1    | FAFO Reserved Bit 0 | 
+ * | 15     | 1    | FAFO Reserved Bit 1 |  
+ * | 16     | 16   | Total Length        | 
+ * | 32     | 16   | Identification      | 
+ * | 48     | 1    | TOS Reserved        | 
+ * | 49     | 1    | DF                  | 
+ * | 50     | 1    | MF                  | 
+ * | 51     | 13   | Fragment Offset     | 
+ * | 64     | 8    | Time to Live        | 
+ * | 72     | 8    | Protocol            | 
+ * | 80     | 16   | Header Checksum     | 
+ * | 96     | 32   | Source Address      | 
+ * | 128    | 32   | Destination Address | 
+ * Total size: 20 bytes (without options). 
+ */  
+
+namespace octo_network 
+{ 
+
+namespace ipv4 
+{ 
+
+namespace container 
+{ 
+
 #pragma pack(push, 1) // Ensure 1-byte alignment for the structure 
 struct Ipv4Header 
 { 
@@ -72,33 +98,6 @@ static_assert(sizeof(Ipv4Header) == 20, "Ipv4Header must be 20 bytes");
 
 
 
-/** 
- * @brief bit offsets and sizes for each field in the IPv4 header and flag (RFC 791). 
- * @par Memory Layout (Offset and Size in Bits) 
- * | Offset | Size | Field               | 
- * |--------|------|---------------------| 
- * | 0      | 4    | Version             | 
- * | 4      | 4    | IPv4 Header Length  | 
- * | 8      | 3    | Precedence          | 
- * | 11     | 1    | Delay               | 
- * | 12     | 1    | Throughput          | 
- * | 13     | 1    | Reliability         | 
- * | 14     | 1    | FAFO Reserved Bit 0 | 
- * | 15     | 1    | FAFO Reserved Bit 1 |  
- * | 16     | 16   | Total Length        | 
- * | 32     | 16   | Identification      | 
- * | 48     | 1    | TOS Reserved        | 
- * | 49     | 1    | DF                  | 
- * | 50     | 1    | MF                  | 
- * | 51     | 13   | Fragment Offset     | 
- * | 64     | 8    | Time to Live        | 
- * | 72     | 8    | Protocol            | 
- * | 80     | 16   | Header Checksum     | 
- * | 96     | 32   | Source Address      | 
- * | 128    | 32   | Destination Address | 
- * Total size: 20 bytes (without options). 
- * 
- */ 
 namespace offset 
 { 
 
@@ -229,6 +228,7 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
