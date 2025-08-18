@@ -30,9 +30,9 @@
  * | 12     | 1    | Throughput           | 
  * | 13     | 1    | Reliability          | 
  * | 14     | 1    | FAFO* Reserved       | 
- * | 16     | 16   | Total Length         | 
- * | 32     | 16   | Identification       | 
- * | 48     | 1    | TOS** Reserved bit 0 |    
+ * | 15     | 16   | Total Length         | 
+ * | 31     | 16   | Identification       | 
+ * | 47     | 1    | TOS** Reserved bit 0 |    
  * | 48     | 1    | TOS** Reserved bit 1 |    
  * | 49     | 1    | DF                   | 
  * | 50     | 1    | MF                   | 
@@ -45,7 +45,7 @@
  * Total size: 20 bytes (without options). 
  * 
  * * FAFO (Flags and fragmentation offset) 
- * ** TOS(Type of service) packets. 
+ * ** TOS(Type of service).  
  * 
  * @note All structures are packed to ensure strict conformance to byte alignment as defined in RFC 791. 
  *       The usage of raw byte arrays, etc. allows for system-endian independent access. 
@@ -251,6 +251,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
