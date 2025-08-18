@@ -3,7 +3,7 @@
  * @brief Defines structures and constants and functions for IPv4 header manipulation as per RFC 791: https://www.rfc-editor.org/rfc/rfc791#ref-9. 
  * 
  * 
- * @brief Represents an IPv4 headers memmory layout according to RFC 791. 
+ * @brief Represents an IPv4 headers memory layout according to RFC 791. 
  * 
  * @par Memory Layout (Offset and Size in Bytes) 
  * | Offset | Size | Field                     | 
@@ -251,6 +251,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
