@@ -80,16 +80,7 @@ namespace container
 #pragma pack(push, 1) // Ensure 1-byte alignment for the structure 
 struct Ipv4Header 
 { 
-    std::uint8_t                versionAndHeaderLength;            // Combined Version and Internet Header Length 
-    std::uint8_t                typeOfService; 
-    std::array<std::uint8_t, 2> totalLength; 
-    std::array<std::uint8_t, 2> identification; 
-    std::array<std::uint8_t, 2> flagsAndFragmentOffset; 
-    std::uint8_t                timeToLive; 
-    std::uint8_t                protocol; 
-    std::array<std::uint8_t, 2> headerChecksum; 
-    std::array<std::uint8_t, 4> sourceAddress; 
-    std::array<std::uint8_t, 4> destinationAddress; 
+    std::array<std::uint8_t> ipv4Header;  
     
 }; 
 #pragma pack(pop) // Restore previous packing alignment 
@@ -263,6 +254,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
