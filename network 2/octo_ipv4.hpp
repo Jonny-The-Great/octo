@@ -24,12 +24,8 @@
 namespace octo_network 
 { 
 
-
 namespace ipv4 
 { 
-
-
-
 
 namespace container 
 { 
@@ -103,7 +99,6 @@ static_assert(sizeof(Ipv4Header) == 20, "Ipv4Header must be 20 bytes");
  * Total size: 20 bytes (without options). 
  * 
  */ 
-
 namespace offset 
 { 
 
@@ -229,16 +224,12 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
 
 } // namespace utility 
 
-
-
-
-
-
 } // namespace ipv4  
 
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
