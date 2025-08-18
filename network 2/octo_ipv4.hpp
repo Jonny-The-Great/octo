@@ -236,15 +236,15 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
  * @param ipv4HeaderByteArray The IPv4 header as a raw byte array to extract the bits from. 
  * @param outputBuffer The output buffer to hold the extracted version, provided as a std::span. 
  */ 
-void ChangeVersion(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void ChangeHeaderLengthInWords(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void ChangePrecedence(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void ChangeDelay(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void ChangeThroughput(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void ChangeReliability(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void ChangeTosReserved0(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void ChangeTosReserved1(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void ChangeTotalLength(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeVersion(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeHeaderLengthInWords(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangePrecedence(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeDelay(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeThroughput(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeReliability(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeTosReserved0(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeTosReserved1(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeTotalLength(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
 void ChangeIdentifier(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
 void ChangeFafoReserved(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
 void ChangeDf(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
@@ -264,6 +264,7 @@ void ChangeDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArra
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
