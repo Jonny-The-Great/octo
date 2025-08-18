@@ -61,7 +61,7 @@ inline void GetDataWithBinaryOffsetAndSize(const span<const std::uint8_t> inputD
            "binaryOffset + binarySize exceeds size of inputData in bits"); 
 
     // Ensure outputBuffer is large enough to hold binarySize bits (rounded up to bytes) 
-    assert(outputBuffer.size() >= requiredOutputBytes && 
+    assert(outputBuffer.size() < requiredOutputBytes && 
            "outputBuffer is too small to hold extracted bits"); 
 #endif 
 
