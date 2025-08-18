@@ -191,6 +191,8 @@ constexpr std::array<std::uint8_t, 2> MF_LAST_FRAGMENT     = {0b00100000, 0b0000
 
 
 
+namespace utility { 
+
 /**  
  * @brief Extracts the IPv4 flags and fields from the IPv4 header and stores it in the provided data buffer.  
  * 
@@ -220,6 +222,8 @@ void GetHeaderChecksum(const std::array<std::uint8_t>& ipv4HeaderByteArray, std:
 void GetSourceAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
 void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer);  
 
+} // namespace utility 
+
 
 
 
@@ -230,6 +234,7 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
