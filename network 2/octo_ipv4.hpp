@@ -246,15 +246,15 @@ void changeTosReserved0(const std::array<std::uint8_t>& ipv4HeaderByteArray, std
 void changeTosReserved1(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
 void changeTotalLength(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
 void changeIdentifier(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetFafoReserved(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetDf(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetMf(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetFragmentOffset(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetTimeToLive(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetProtocol(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetHeaderChecksum(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetSourceAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer);  
+void changeFafoReserved(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void changeDf(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void changeMf(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void changeFragmentOffset(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void changeTimeToLive(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void changeProtocol(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void changeHeaderChecksum(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void changeSourceAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void changeDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer);  
 
 
 } // namespace utility 
@@ -264,6 +264,7 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
