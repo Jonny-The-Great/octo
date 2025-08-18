@@ -251,10 +251,10 @@ void ChangeDf(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std
 void ChangeMf(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
 void ChangeFragmentOffset(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
 void ChangeTimeToLive(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void changeProtocol(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void changeHeaderChecksum(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void changeSourceAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
-void changeDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer);  
+void ChangeProtocol(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeHeaderChecksum(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeSourceAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer); 
+void ChangeDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> outputBuffer);  
 
 
 } // namespace utility 
@@ -264,6 +264,7 @@ void changeDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArra
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
