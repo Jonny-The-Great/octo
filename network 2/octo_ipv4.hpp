@@ -25,11 +25,13 @@ namespace octo_network
 { 
 
 
-namespace octo_ipv4 
+namespace ipv4 
 { 
 
 
 
+
+namespace container { 
 
 /** 
  * @brief Represents an IPv4 header according to RFC 791. 
@@ -68,6 +70,8 @@ struct Ipv4Header
 // Ensure the structure is packed correctly to match the expected size 
 static_assert(sizeof(Ipv4Header) == 20, "Ipv4Header must be 20 bytes"); 
 
+} // namespace container 
+
 
 
 
@@ -98,56 +102,64 @@ static_assert(sizeof(Ipv4Header) == 20, "Ipv4Header must be 20 bytes");
  * Total size: 20 bytes (without options). 
  * 
  */ 
+
+namespace offset { 
+
 // Bit offsets for each IPv4 header field 
-constexpr std::uint8_t BIT_OFFSET_IPV4_VERSION             = 0;  // high nibble 
-constexpr std::uint8_t BIT_OFFSET_IPV4_HEADER_LENGTH       = 4;  // low nibble 
-constexpr std::uint8_t BIT_OFFSET_IPV4_PRECEDENCE          = 8; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_DELAY               = 11; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_THROUGHPUT          = 12; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_RELIABILITY         = 13; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_FAFO_RESERVED0      = 14; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_FAFO_RESERVED1      = 15; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_TOTAL_LENGTH        = 16; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_IDENTIFICATION      = 32; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_TOS_RESERVED        = 48; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_DF                  = 49; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_MF                  = 50; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_FRAGMENT_OFFSET     = 51; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_TIME_TO_LIVE        = 64; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_PROTOCOL            = 72; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_HEADER_CHECKSUM     = 80; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_SOURCE_ADDRESS      = 96; 
-constexpr std::uint8_t BIT_OFFSET_IPV4_DESTINATION_ADDRESS = 128; 
+constexpr std::uint8_t VERSION             = 0;  // high nibble 
+constexpr std::uint8_t HEADER_LENGTH       = 4;  // low nibble 
+constexpr std::uint8_t PRECEDENCE          = 8; 
+constexpr std::uint8_t DELAY               = 11; 
+constexpr std::uint8_t THROUGHPUT          = 12; 
+constexpr std::uint8_t RELIABILITY         = 13; 
+constexpr std::uint8_t FAFO_RESERVED0      = 14; 
+constexpr std::uint8_t FAFO_RESERVED1      = 15; 
+constexpr std::uint8_t TOTAL_LENGTH        = 16; 
+constexpr std::uint8_t IDENTIFICATION      = 32; 
+constexpr std::uint8_t TOS_RESERVED        = 48; 
+constexpr std::uint8_t DF                  = 49; 
+constexpr std::uint8_t MF                  = 50; 
+constexpr std::uint8_t FRAGMENT_OFFSET     = 51; 
+constexpr std::uint8_t TIME_TO_LIVE        = 64; 
+constexpr std::uint8_t PROTOCOL            = 72; 
+constexpr std::uint8_t HEADER_CHECKSUM     = 80; 
+constexpr std::uint8_t SOURCE_ADDRESS      = 96; 
+constexpr std::uint8_t DESTINATION_ADDRESS = 128; 
+
+} // namespace offset 
+
+
+
+
+namespace size { 
 
 // Bit sizes for each IPv4 header field 
-constexpr std::uint8_t BIT_SIZE_IPV4_VERSION               = 4;  // high nibble 
-constexpr std::uint8_t BIT_SIZE_IPV4_HEADER_LENGTH         = 4;  // low nibble 
-constexpr std::uint8_t BIT_SIZE_IPV4_PRECEDENCE            = 3; 
-constexpr std::uint8_t BIT_SIZE_IPV4_DELAY                 = 1; 
-constexpr std::uint8_t BIT_SIZE_IPV4_THROUGHPUT            = 1; 
-constexpr std::uint8_t BIT_SIZE_IPV4_RELIABILITY           = 1; 
-constexpr std::uint8_t BIT_SIZE_IPV4_FAFO_RESERVED0        = 1; 
-constexpr std::uint8_t BIT_SIZE_IPV4_FAFO_RESERVED1        = 1; 
-constexpr std::uint8_t BIT_SIZE_IPV4_TOTAL_LENGTH          = 16; 
-constexpr std::uint8_t BIT_SIZE_IPV4_IDENTIFICATION        = 16; 
-constexpr std::uint8_t BIT_SIZE_IPV4_TOS_RESERVED          = 1; 
-constexpr std::uint8_t BIT_SIZE_IPV4_DF                    = 1; 
-constexpr std::uint8_t BIT_SIZE_IPV4_MF                    = 1; 
-constexpr std::uint8_t BIT_SIZE_IPV4_FRAGMENT_OFFSET       = 13; 
-constexpr std::uint8_t BIT_SIZE_IPV4_TIME_TO_LIVE          = 8; 
-constexpr std::uint8_t BIT_SIZE_IPV4_PROTOCOL              = 8; 
-constexpr std::uint8_t BIT_SIZE_IPV4_HEADER_CHECKSUM       = 16; 
-constexpr std::uint8_t BIT_SIZE_IPV4_SOURCE_ADDRESS        = 32; 
-constexpr std::uint8_t BIT_SIZE_IPV4_DESTINATION_ADDRESS   = 32; 
+constexpr std::uint8_t VERSION               = 4;  // high nibble 
+constexpr std::uint8_t HEADER_LENGTH         = 4;  // low nibble 
+constexpr std::uint8_t PRECEDENCE            = 3; 
+constexpr std::uint8_t DELAY                 = 1; 
+constexpr std::uint8_t THROUGHPUT            = 1; 
+constexpr std::uint8_t RELIABILITY           = 1; 
+constexpr std::uint8_t FAFO_RESERVED0        = 1; 
+constexpr std::uint8_t FAFO_RESERVED1        = 1; 
+constexpr std::uint8_t TOTAL_LENGTH          = 16; 
+constexpr std::uint8_t IDENTIFICATION        = 16; 
+constexpr std::uint8_t TOS_RESERVED          = 1; 
+constexpr std::uint8_t DF                    = 1; 
+constexpr std::uint8_t MF                    = 1; 
+constexpr std::uint8_t FRAGMENT_OFFSET       = 13; 
+constexpr std::uint8_t TIME_TO_LIVE          = 8; 
+constexpr std::uint8_t PROTOCOL              = 8; 
+constexpr std::uint8_t HEADER_CHECKSUM       = 16; 
+constexpr std::uint8_t SOURCE_ADDRESS        = 32; 
+constexpr std::uint8_t DESTINATION_ADDRESS   = 32; 
+
+} // namespace size 
 
 
 
 
-/// Version and header length: Version 
-constexpr std::uint8_t VERSION                             = 4; // Version 4  
-
-/// Version and header length: Header Length in Words 
-constexpr std::uint8_t HEADER_LENGTH                       = 5;  
+namespace bitfields 
 
 /// Type of service: Precedense   
 constexpr std::uint8_t PRECEDENCE_NETWORK_CONTROL          = 0b11100000; 
@@ -189,51 +201,6 @@ constexpr std::array<std::uint8_t, 2> MF_LAST_FRAGMENT     = {0b00100000, 0b0000
 
 
 
-/** 
- * @brief Extracts a sequence of bits from an IPv4 header starting at a specified bit offset, 
- *        and copies them into a provided buffer as a contiguous bit sequence. 
- *  
- * This function treats the IPv4 header as a byte array, extracts `binarySize` bits starting 
- * from `binaryOffset` bit position, and packs them into the output buffer (`dataBuffer`), 
- * with the most significant bit of each byte filled first. The output buffer is zeroed out 
- * before packing. 
- * 
- * @param ipv4Header   The IPv4 header to extract bits from. 
- * @param binaryOffset The bit offset within the IPv4 header to start extraction (0-based). 
- * @param binarySize   The number of bits to extract. 
- * @param dataBuffer   The output buffer to hold the extracted bits, provided as a std::span. 
- *                     Must be large enough to hold `binarySize` bits (rounded up to bytes). 
- * 
- */ 
-inline void GetDataWithBinaryOffsetAndSize(const Ipv4Header& ipv4Header, 
-                                    const std::uint8_t binaryOffset, 
-                                    const std::uint8_t binarySize, 
-                                    std::span<std::uint8_t> dataBuffer); 
-{ 
-    // Zero out the output buffer 
-    std::fill(dataBuffer.begin(), dataBuffer.end(), 0); 
-
-    // Treat the header as a byte array without copying 
-    const std::uint8_t* headerBytes = reinterpret_cast<const std::uint8_t*>(&ipv4Header); 
-
-    // Extract bits 
-    for (std::uint16_t bit = 0; bit < binarySize; ++bit) 
-    { 
-        std::uint16_t srcBitIndex = binaryOffset + bit; 
-        std::uint8_t srcByteIndex = srcBitIndex / 8; 
-        std::uint8_t srcBitOffset = 7 - (srcBitIndex % 8);  
-        std::uint8_t bitValue = (headerBytes[srcByteIndex] >> srcBitOffset) & 0x01; 
-        std::uint8_t dstByteIndex = bit / 8; 
-        std::uint8_t dstBitOffset = 7 - (bit % 8);  
-        dataBuffer[dstByteIndex] |= (bitValue << dstBitOffset); 
-
-    } 
-
-}  
-
-
-
-
 /**  
  * @brief Extracts the IPv4 flags and fields from the IPv4 header and stores it in the provided data buffer.  
  * 
@@ -268,11 +235,12 @@ void GetDestinationAddress(const Ipv4Header& ipv4Header, std::span<std::uint8_t>
 
 
 
-} // namespace octo_ipv4  
+} // namespace ipv4  
 
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
