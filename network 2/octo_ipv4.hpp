@@ -197,28 +197,28 @@ constexpr std::array<std::uint8_t, 2> MF_LAST_FRAGMENT     = {0b00100000, 0b0000
  * This function extracts the version from the IPv4 header by using GetDataWithBinaryOffsetAndSize and places it into the  
  * provided data buffer in big endian order. The version is extracted from the first 4 bits of the `version_and_header_length` field. 
  * 
- * @param ipv4Header The IPv4 header as a raw byte array to extract the bits from. 
- * @param dataBuffer The output buffer to hold the extracted version, provided as a std::span. 
+ * @param ipv4HeaderByteArray The IPv4 header as a raw byte array to extract the bits from. 
+ * @param outputBuffer The output buffer to hold the extracted version, provided as a std::span. 
  */ 
-void GetVersion(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetHeaderLengthInWords(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetPrecedence(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetDelay(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetThroughput(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetReliability(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetTosReserved0(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetTosReserved1(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
+void GetVersion(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> dataBuffer); 
+void GetHeaderLengthInWords(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> dataBuffer); 
+void GetPrecedence(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> dataBuffer); 
+void GetDelay(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> dataBuffer); 
+void GetThroughput(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> dataBuffer); 
+void GetReliability(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> dataBuffer); 
+void GetTosReserved0(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> dataBuffer); 
+void GetTosReserved1(const std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> dataBuffer); 
 void GetTotalLength(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
 void GetIdentifier(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
 void GetFafoReserved(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
 void GetDf(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
 void GetMf(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
 void GetFragmentOffset(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetTimeToLive(const Ipv4Header& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetProtocol(const Ipv4Header& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetHeaderChecksum(const Ipv4Header& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetSourceAddress(const Ipv4Header& ipv4Header, std::span<std::uint8_t> dataBuffer); 
-void GetDestinationAddress(const Ipv4Header& ipv4Header, std::span<std::uint8_t> dataBuffer);  
+void GetTimeToLive(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
+void GetProtocol(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
+void GetHeaderChecksum(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
+void GetSourceAddress(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer); 
+void GetDestinationAddress(const std::array<std::uint8_t>& ipv4Header, std::span<std::uint8_t> dataBuffer);  
 
 
 
@@ -230,6 +230,7 @@ void GetDestinationAddress(const Ipv4Header& ipv4Header, std::span<std::uint8_t>
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
