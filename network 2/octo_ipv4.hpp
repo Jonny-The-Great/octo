@@ -1,27 +1,7 @@
 /** 
  * @file octo_ipv4.hpp 
- * @brief Defines structures and constants for IPv4 header manipulation as per RFC 791: https://www.rfc-editor.org/rfc/rfc791#ref-9. 
+ * @brief Defines structures and constants and functions for IPv4 header manipulation as per RFC 791: https://www.rfc-editor.org/rfc/rfc791#ref-9. 
  * 
- * This header provides: 
- * - A packed struct `Ipv4Header` representing a 20-byte IPv4 header layout. 
- * - Constants for encoding Version, Header Length, Type of Service, and Fragmentation Flags. 
- * - Bit-level layout documentation for key fields. 
- * 
- * The definitions follow the standard IPv4 format and are useful for low-level networking tasks, 
- * such as constructing or parsing raw IPv4 packets. 
- * 
- * @note All structures are packed to ensure strict conformance to byte alignment as defined in RFC 791. 
- *       The usage of raw byte arrays, etc. allows for system-endian independent access. 
- */ 
-#ifndef OCTO_IPV4_HPP 
-#define OCTO_IPV4_HPP 
-
-#include <cstdint> 
-#include <array> 
-#include <span> 
-#include <algorithm>  
-
-/** 
  * 
  * @brief Represents an IPv4 headers memmory layout according to RFC 791. 
  * 
@@ -65,8 +45,18 @@
  * Total size: 20 bytes (without options). 
  * 
  * * FAFO (Flags and fragmentation offset) 
- * ** TOS(Type of service) 
- */  
+ * ** TOS(Type of service) packets. 
+ * 
+ * @note All structures are packed to ensure strict conformance to byte alignment as defined in RFC 791. 
+ *       The usage of raw byte arrays, etc. allows for system-endian independent access. 
+ */ 
+#ifndef OCTO_IPV4_HPP 
+#define OCTO_IPV4_HPP 
+
+#include <cstdint> 
+#include <array> 
+#include <span> 
+#include <algorithm>  
 
 namespace octo_network 
 { 
@@ -254,6 +244,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
