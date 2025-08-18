@@ -230,11 +230,10 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
 /**  
  * @brief Extracts the IPv4 flags and fields from the IPv4 header and stores it in the provided data buffer.  
  * 
- * This function extracts the version from the IPv4 header by using GetDataWithBinaryOffsetAndSize and places it into the  
- * provided data buffer in big endian order. The version is extracted from the first 4 bits of the `version_and_header_length` field. 
+ * This function changes the IPv4 header by using ChangeDataWithBinaryOffsetAndSize    
  * 
  * @param ipv4HeaderByteArray The IPv4 header as a raw byte array to extract the bits from. 
- * @param outputBuffer The output buffer to hold the extracted version, provided as a std::span. 
+ * @param bitfield the bitfield to apply, provided as a std::span. 
  */ 
 void ChangeVersion(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> bitfield); 
 void ChangeHeaderLengthInWords(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> bitfield); 
@@ -264,6 +263,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
