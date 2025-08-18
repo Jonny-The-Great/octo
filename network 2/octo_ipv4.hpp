@@ -159,9 +159,9 @@ constexpr std::uint8_t DESTINATION_ADDRESS   = 32;
 
 
 
-namespace bitfields 
+namespace bitfields { 
 
-/// Type of service: Precedense   
+/// Type of service:    
 constexpr std::uint8_t PRECEDENCE_NETWORK_CONTROL          = 0b11100000; 
 constexpr std::uint8_t PRECEDENCE_INTERNETWORK_CONTROL     = 0b11000000; 
 constexpr std::uint8_t PRECEDENCE_CRITIC_ECP               = 0b10100000;  
@@ -170,33 +170,23 @@ constexpr std::uint8_t PRECEDENCE_FLASH                    = 0b01100000;
 constexpr std::uint8_t PRECEDENCE_IMMEDIATE                = 0b01000000; 
 constexpr std::uint8_t PRECEDENCE_PRIORITY                 = 0b00100000; 
 constexpr std::uint8_t PRECEDENCE_ROUTINE                  = 0b00000000; 
-
-/// Type of service: Delay   
 constexpr std::uint8_t DELAY_NORMAL                        = 0b00000000; 
 constexpr std::uint8_t DELAY_LOW                           = 0b00010000;  
-
-/// Type of service: Throughput 
 constexpr std::uint8_t THROUGHPUT_NORMAL                   = 0b00000000; 
 constexpr std::uint8_t THROUGHPUT_HIGH                     = 0b00001000; 
-
-/// Type of service: Reliability 
 constexpr std::uint8_t RELIABILITY_NORMAL                  = 0b00000000;  
 constexpr std::uint8_t RELIABILITY_HIGH                    = 0b00000100;  
-
-/// Type of service: Reserved Bits 
 constexpr std::uint8_t TOS_RESERVED                        = 0b00000000; 
 
-/// Flags and fragment offset: Reserved 
+/// Flags and fragment offset:  
 constexpr std::array<std::uint8_t, 2> FAFO_RESERVED0       = {0b00000000, 0b00000000}; 
 constexpr std::array<std::uint8_t, 2> FAFO_RESERVED1       = {0b00000000, 0b00000000}; 
-
-/// Flags and fragment offset: Don't Fragment (DF) 
-constexpr std::array<std::uint8_t, 2> MD_MAY_FRAGMENT      = {0b00000000, 0b00000000}; 
-constexpr std::array<std::uint8_t, 2> MD_DONT_FRAGMENT     = {0b01000000, 0b00000000}; 
-
-/// Flags and fragment offset: More Fragments (MF) 
+constexpr std::array<std::uint8_t, 2> DF_MAY_FRAGMENT      = {0b00000000, 0b00000000}; 
+constexpr std::array<std::uint8_t, 2> DF_DONT_FRAGMENT     = {0b01000000, 0b00000000}; 
 constexpr std::array<std::uint8_t, 2> MF_MORE_FRAGMENTS    = {0b00000000, 0b00000000}; 
 constexpr std::array<std::uint8_t, 2> MF_LAST_FRAGMENT     = {0b00100000, 0b00000000};  
+
+} // namespace bitfields  
 
 
 
@@ -240,6 +230,7 @@ void GetDestinationAddress(const Ipv4Header& ipv4Header, std::span<std::uint8_t>
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
