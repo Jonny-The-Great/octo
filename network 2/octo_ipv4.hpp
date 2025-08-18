@@ -80,7 +80,7 @@ namespace container
 #pragma pack(push, 1) // Ensure 1-byte alignment for the structure 
 struct Ipv4Header 
 { 
-    std::array<std::uint8_t> ipv4Header;  
+    std::array<std::uint8_t, 20> ipv4Header;  
     
 }; 
 #pragma pack(pop) // Restore previous packing alignment 
@@ -254,6 +254,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
