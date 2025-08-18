@@ -6,18 +6,18 @@
  * @brief Represents an IPv4 headers memmory layout according to RFC 791. 
  * 
  * @par Memory Layout (Offset and Size in Bytes) 
- * | Offset | Size | Field                      | 
- * |--------|------|----------------------------| 
- * | 0      | 1    | Version and header length  | 
- * | 1      | 1    | Type of service            | 
- * | 2      | 2    | Total length               | 
- * | 4      | 2    | Identification             | 
- * | 6      | 2    | Flags and fragment offset  | 
- * | 8      | 1    | Time to live               | 
- * | 9      | 1    | Protocol                   | 
- * | 10     | 2    | Header checksum            | 
- * | 12     | 4    | Source address             | 
- * | 16     | 4    | Destination address        | 
+ * | Offset | Size | Field                     | 
+ * |--------|------|---------------------------| 
+ * | 0      | 1    | Version and header length | 
+ * | 1      | 1    | Type of service           | 
+ * | 2      | 2    | Total length              | 
+ * | 4      | 2    | Identification            | 
+ * | 6      | 2    | Flags and fragment offset | 
+ * | 8      | 1    | Time to live              | 
+ * | 9      | 1    | Protocol                  | 
+ * | 10     | 2    | Header checksum           | 
+ * | 12     | 4    | Source address            | 
+ * | 16     | 4    | Destination address       | 
  * Total size: 20 bytes (without options). 
  * 
  * @par Memory Layout (Offset and Size in Bits) 
@@ -63,6 +63,9 @@ namespace octo_network
 
 namespace ipv4 
 { 
+
+
+
 
 namespace container 
 { 
@@ -239,11 +242,15 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 
 } // namespace utility 
 
+
+
+
 } // namespace ipv4  
 
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
