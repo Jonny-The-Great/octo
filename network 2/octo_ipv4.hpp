@@ -31,7 +31,8 @@ namespace ipv4
 
 
 
-namespace container { 
+namespace container 
+{ 
 
 /** 
  * @brief Represents an IPv4 header according to RFC 791. 
@@ -103,7 +104,8 @@ static_assert(sizeof(Ipv4Header) == 20, "Ipv4Header must be 20 bytes");
  * 
  */ 
 
-namespace offset { 
+namespace offset 
+{ 
 
 // Bit offsets for each IPv4 header field 
 constexpr std::uint8_t VERSION             = 0;  // high nibble 
@@ -131,7 +133,8 @@ constexpr std::uint8_t DESTINATION_ADDRESS = 128;
 
 
 
-namespace size { 
+namespace size 
+{ 
 
 // Bit sizes for each IPv4 header field 
 constexpr std::uint8_t VERSION               = 4;  // high nibble 
@@ -159,7 +162,8 @@ constexpr std::uint8_t DESTINATION_ADDRESS   = 32;
 
 
 
-namespace bitfields { 
+namespace bitfields 
+{ 
 
 /// Type of service:    
 constexpr std::uint8_t PRECEDENCE_NETWORK_CONTROL          = 0b11100000; 
@@ -191,7 +195,8 @@ constexpr std::array<std::uint8_t, 2> MF_LAST_FRAGMENT     = {0b00100000, 0b0000
 
 
 
-namespace utility { 
+namespace utility 
+{ 
 
 /**  
  * @brief Extracts the IPv4 flags and fields from the IPv4 header and stores it in the provided data buffer.  
@@ -234,6 +239,7 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
 } // namespace octo_network 
 
 #endif // OCTO_HPP 
+
 
 
 
