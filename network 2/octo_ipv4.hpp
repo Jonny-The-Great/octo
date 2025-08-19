@@ -118,25 +118,25 @@ namespace size
 { 
 
 // Bit sizes for each IPv4 header field 
-constexpr std::uint8_t VERSION               = 4;  // high nibble 
-constexpr std::uint8_t HEADER_LENGTH         = 4;  // low nibble 
-constexpr std::uint8_t PRECEDENCE            = 3; 
-constexpr std::uint8_t DELAY                 = 1; 
-constexpr std::uint8_t THROUGHPUT            = 1; 
-constexpr std::uint8_t RELIABILITY           = 1; 
-constexpr std::uint8_t FAFO_RESERVED0        = 1; 
-constexpr std::uint8_t FAFO_RESERVED1        = 1; 
-constexpr std::uint8_t TOTAL_LENGTH          = 16; 
-constexpr std::uint8_t IDENTIFICATION        = 16; 
-constexpr std::uint8_t TOS_RESERVED          = 1; 
-constexpr std::uint8_t DF                    = 1; 
-constexpr std::uint8_t MF                    = 1; 
-constexpr std::uint8_t FRAGMENT_OFFSET       = 13; 
-constexpr std::uint8_t TIME_TO_LIVE          = 8; 
-constexpr std::uint8_t PROTOCOL              = 8; 
-constexpr std::uint8_t HEADER_CHECKSUM       = 16; 
-constexpr std::uint8_t SOURCE_ADDRESS        = 32; 
-constexpr std::uint8_t DESTINATION_ADDRESS   = 32; 
+constexpr std::uint8_t VERSION             = 4;  // high nibble 
+constexpr std::uint8_t HEADER_LENGTH       = 4;  // low nibble 
+constexpr std::uint8_t PRECEDENCE          = 3; 
+constexpr std::uint8_t DELAY               = 1; 
+constexpr std::uint8_t THROUGHPUT          = 1; 
+constexpr std::uint8_t RELIABILITY         = 1; 
+constexpr std::uint8_t FAFO_RESERVED0      = 1; 
+constexpr std::uint8_t FAFO_RESERVED1      = 1; 
+constexpr std::uint8_t TOTAL_LENGTH        = 16; 
+constexpr std::uint8_t IDENTIFICATION      = 16; 
+constexpr std::uint8_t TOS_RESERVED        = 1; 
+constexpr std::uint8_t DF                  = 1; 
+constexpr std::uint8_t MF                  = 1; 
+constexpr std::uint8_t FRAGMENT_OFFSET     = 13; 
+constexpr std::uint8_t TIME_TO_LIVE        = 8; 
+constexpr std::uint8_t PROTOCOL            = 8; 
+constexpr std::uint8_t HEADER_CHECKSUM     = 16; 
+constexpr std::uint8_t SOURCE_ADDRESS      = 32; 
+constexpr std::uint8_t DESTINATION_ADDRESS = 32; 
 
 } // namespace size 
 
@@ -250,6 +250,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
