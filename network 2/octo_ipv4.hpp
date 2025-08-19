@@ -183,7 +183,7 @@ namespace utility
 /**  
  * @brief Extracts the IPv4 flags and fields from the IPv4 header and stores it in the provided data buffer.  
  * 
- * This function extracts the version from the IPv4 header by using GetDataWithBinaryOffsetAndSize and places it into the  
+ * This function extracts the flags and fields from the IPv4 header by using GetDataWithBinaryOffsetAndSize and places it into the  
  * provided data buffer.  
  * 
  * @param ipv4HeaderByteArray The IPv4 header as a raw byte array to extract the bits from. 
@@ -251,6 +251,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
