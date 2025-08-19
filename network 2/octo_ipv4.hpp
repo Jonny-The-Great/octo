@@ -97,11 +97,11 @@ constexpr std::uint8_t PRECEDENCE          = 8;
 constexpr std::uint8_t DELAY               = 11; 
 constexpr std::uint8_t THROUGHPUT          = 12; 
 constexpr std::uint8_t RELIABILITY         = 13; 
-constexpr std::uint8_t FAFO_RESERVED       = 14; 
+constexpr std::uint8_t RESERVED0           = 14; 
 constexpr std::uint8_t TOTAL_LENGTH        = 16; 
 constexpr std::uint8_t IDENTIFICATION      = 32; 
-constexpr std::uint8_t TOS_RESERVED0       = 48; 
-constexpr std::uint8_t TOS_RESERVED1       = 15; 
+constexpr std::uint8_t RESERVED1           = 48; 
+constexpr std::uint8_t RESERVED2           = 15; 
 constexpr std::uint8_t DF                  = 49; 
 constexpr std::uint8_t MF                  = 50; 
 constexpr std::uint8_t FRAGMENT_OFFSET     = 51; 
@@ -126,11 +126,11 @@ constexpr std::uint8_t PRECEDENCE          = 3;
 constexpr std::uint8_t DELAY               = 1; 
 constexpr std::uint8_t THROUGHPUT          = 1; 
 constexpr std::uint8_t RELIABILITY         = 1; 
-constexpr std::uint8_t FAFO_RESERVED       = 1; 
+constexpr std::uint8_t RESERVED0           = 1; 
 constexpr std::uint8_t TOTAL_LENGTH        = 16; 
 constexpr std::uint8_t IDENTIFICATION      = 16; 
-constexpr std::uint8_t TOS_RESERVED0       = 1; 
-constexpr std::uint8_t TOS_RESERVED1       = 1; 
+constexpr std::uint8_t RESERVED1           = 1; 
+constexpr std::uint8_t RESERVED2           = 1; 
 constexpr std::uint8_t DF                  = 1; 
 constexpr std::uint8_t MF                  = 1; 
 constexpr std::uint8_t FRAGMENT_OFFSET     = 13; 
@@ -252,6 +252,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
