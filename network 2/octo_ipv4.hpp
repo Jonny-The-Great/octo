@@ -144,7 +144,7 @@ constexpr std::uint8_t DESTINATION_ADDRESS   = 32;
 
 
 
-namespace bitfields 
+namespace bit_patterns 
 { 
 
 /// Type of service:    
@@ -172,7 +172,7 @@ constexpr std::uint8_t DF_DONT_FRAGMENT     = 0b10000000;
 constexpr std::uint8_t MF_MORE_FRAGMENTS    = 0b00000000; 
 constexpr std::uint8_t MF_LAST_FRAGMENT     = 0b10000000;  
 
-} // namespace bitfields  
+} // namespace bit_patterns  
 
 
 
@@ -251,6 +251,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
