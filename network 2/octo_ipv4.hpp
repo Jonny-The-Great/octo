@@ -34,8 +34,8 @@
  * | 31     | 16   | Identification            | 
  * | 47     | 1    | TOS** Reserved bit 0      |    
  * | 48     | 1    | TOS** Reserved bit 1      |    
- * | 49     | 1    | DF                        | 
- * | 50     | 1    | MF                        | 
+ * | 49     | 1    | DF***                     |    
+ * | 50     | 1    | MF****                    |     
  * | 51     | 13   | Fragment Offset           | 
  * | 64     | 8    | Time to Live              | 
  * | 72     | 8    | Protocol                  | 
@@ -46,6 +46,8 @@
  * 
  * * FAFO (Flags and fragmentation offset) 
  * ** TOS(Type of service).  
+ * *** DF (Dont Fragment) 
+ * **** MF(May Fragment) 
  * 
  * @note All structures are packed to ensure strict conformance to byte alignment as defined in RFC 791. 
  *       The usage of raw byte arrays, etc. allows for system-endian independent access. 
@@ -250,6 +252,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
