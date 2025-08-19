@@ -71,14 +71,13 @@ namespace ipv4
 namespace container 
 { 
 
-#pragma pack(push, 1) // Ensure 1-byte alignment for the structure 
+#pragma pack(push, 1)  
 struct Ipv4Header 
 { 
     std::array<std::uint8_t, 20> ipv4Header;  
     
 }; 
-#pragma pack(pop) // Restore previous packing alignment 
-// Ensure the structure is packed correctly to match the expected size 
+#pragma pack(pop)  
 static_assert(sizeof(Ipv4Header) == 20, "Ipv4Header must be 20 bytes"); 
 
 } // namespace container 
@@ -251,6 +250,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
