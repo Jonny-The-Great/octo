@@ -218,7 +218,7 @@ void GetDestinationAddress(const std::array<std::uint8_t>& ipv4HeaderByteArray, 
  * This function changes the IPv4 header by using ChangeDataWithBinaryOffsetAndSize    
  * 
  * @param ipv4HeaderByteArray The IPv4 header as a raw byte array to extract the bits from. 
- * @param bitfield the bitfield to apply, provided as a std::span. 
+ * @param bit_pattern The bit pattern to apply, provided as a std::span. 
  */ 
 void ChangeVersion(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> bitfield); 
 void ChangeHeaderLengthInWords(std::array<std::uint8_t>& ipv4HeaderByteArray, std::span<std::uint8_t> bitfield); 
@@ -251,6 +251,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
