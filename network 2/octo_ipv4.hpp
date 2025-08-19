@@ -165,12 +165,12 @@ constexpr std::uint8_t RELIABILITY_HIGH                    = 0b00000100;
 constexpr std::uint8_t TOS_RESERVED                        = 0b00000000; 
 
 /// Flags and fragment offset:  
-constexpr std::array<std::uint8_t, 2> FAFO_RESERVED0       = {0b00000000, 0b00000000}; 
-constexpr std::array<std::uint8_t, 2> FAFO_RESERVED1       = {0b00000000, 0b00000000}; 
-constexpr std::array<std::uint8_t, 2> DF_MAY_FRAGMENT      = {0b00000000, 0b00000000}; 
-constexpr std::array<std::uint8_t, 2> DF_DONT_FRAGMENT     = {0b01000000, 0b00000000}; 
-constexpr std::array<std::uint8_t, 2> MF_MORE_FRAGMENTS    = {0b00000000, 0b00000000}; 
-constexpr std::array<std::uint8_t, 2> MF_LAST_FRAGMENT     = {0b00100000, 0b00000000};  
+constexpr std::uint8_t FAFO_RESERVED0       = 0b00000000; 
+constexpr std::uint8_t FAFO_RESERVED1       = {0b00000000, 0b00000000}; 
+constexpr std::uint8_t DF_MAY_FRAGMENT      = {0b00000000, 0b00000000}; 
+constexpr std::uint8_t DF_DONT_FRAGMENT     = {0b01000000, 0b00000000}; 
+constexpr std::uint8_t MF_MORE_FRAGMENTS    = {0b00000000, 0b00000000}; 
+constexpr std::uint8_t MF_LAST_FRAGMENT     = {0b00100000, 0b00000000};  
 
 } // namespace bitfields  
 
@@ -251,6 +251,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
