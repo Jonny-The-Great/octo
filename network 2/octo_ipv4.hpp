@@ -143,6 +143,13 @@ constexpr std::uint8_t DESTINATION_ADDRESS = 32;
 namespace bit_patterns 
 { 
 
+/// Flags and fragment offset:  
+constexpr std::uint8_t RESERVED0                       = 0b00000000; 
+constexpr std::uint8_t DF_MAY_FRAGMENT                 = 0b00000000; 
+constexpr std::uint8_t DF_DONT_FRAGMENT                = 0b10000000; 
+constexpr std::uint8_t MF_MORE_FRAGMENTS               = 0b00000000; 
+constexpr std::uint8_t MF_LAST_FRAGMENT                = 0b10000000;  
+
 /// Type of service:    
 constexpr std::uint8_t PRECEDENCE_NETWORK_CONTROL      = 0b11100000; 
 constexpr std::uint8_t PRECEDENCE_INTERNETWORK_CONTROL = 0b11000000; 
@@ -158,15 +165,8 @@ constexpr std::uint8_t THROUGHPUT_NORMAL               = 0b00000000;
 constexpr std::uint8_t THROUGHPUT_HIGH                 = 0b10000000; 
 constexpr std::uint8_t RELIABILITY_NORMAL              = 0b00000000;  
 constexpr std::uint8_t RELIABILITY_HIGH                = 0b10000000;  
-constexpr std::uint8_t TOS_RESERVED0                   = 0b00000000; 
-constexpr std::uint8_t TOS_RESERVED1                   = 0b00000000; 
-
-/// Flags and fragment offset:  
-constexpr std::uint8_t FAFO_RESERVED                   = 0b00000000; 
-constexpr std::uint8_t DF_MAY_FRAGMENT                 = 0b00000000; 
-constexpr std::uint8_t DF_DONT_FRAGMENT                = 0b10000000; 
-constexpr std::uint8_t MF_MORE_FRAGMENTS               = 0b00000000; 
-constexpr std::uint8_t MF_LAST_FRAGMENT                = 0b10000000;  
+constexpr std::uint8_t RESERVED1                       = 0b00000000; 
+constexpr std::uint8_t RESERVED2                       = 0b00000000; 
 
 } // namespace bit_patterns  
 
@@ -247,6 +247,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
