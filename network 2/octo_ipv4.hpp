@@ -21,27 +21,27 @@
  * Total size: 20 bytes (without options). 
  * 
  * @par Memory Layout (Offset and Size in Bits) 
- * | Offset | Size | Field                     | 
- * |--------|------|---------------------------| 
- * | 0      | 4    | Version                   | 
- * | 4      | 4    | IPv4 Header Length        | 
- * | 8      | 3    | Precedence                | 
- * | 11     | 1    | Delay                     | 
- * | 12     | 1    | Throughput                | 
- * | 13     | 1    | Reliability               | 
- * | 14     | 1    | FAFO* Reserved            | 
- * | 15     | 16   | Total Length              | 
- * | 31     | 16   | Identification            | 
- * | 47     | 1    | TOS** Reserved bit 0      |    
- * | 48     | 1    | TOS** Reserved bit 1      |    
- * | 49     | 1    | DF***                     |    
- * | 50     | 1    | MF****                    |     
- * | 51     | 13   | Fragment Offset           | 
- * | 64     | 8    | Time to Live              | 
- * | 72     | 8    | Protocol                  | 
- * | 80     | 16   | Header Checksum           | 
- * | 96     | 32   | Source Address            | 
- * | 128    | 32   | Destination Address       | 
+ * | Offset | Size | Field                                      | 
+ * |--------|------|--------------------------------------------| 
+ * | 0      | 4    | Version                                    | 
+ * | 4      | 4    | IPv4 Header Length                         | 
+ * | 8      | 3    | Precedence                                 | 
+ * | 11     | 1    | Delay                                      | 
+ * | 12     | 1    | Throughput                                 | 
+ * | 13     | 1    | Reliability                                | 
+ * | 14     | 1    | Reserved0 (flags and fragmentation offset) | 
+ * | 15     | 16   | Total Length                               | 
+ * | 31     | 16   | Identification                             | 
+ * | 47     | 1    | Reserved1 (Type of service)                |    
+ * | 48     | 1    | Reserved2 (Type of service)                |    
+ * | 49     | 1    | DF                                         |    
+ * | 50     | 1    | MF                                         |     
+ * | 51     | 13   | Fragment Offset                            | 
+ * | 64     | 8    | Time to Live                               | 
+ * | 72     | 8    | Protocol                                   | 
+ * | 80     | 16   | Header Checksum                            | 
+ * | 96     | 32   | Source Address                             | 
+ * | 128    | 32   | Destination Address                        | 
  * Total size: 20 bytes (without options). 
  * 
  * * FAFO (Flags and fragmentation offset) 
@@ -252,6 +252,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
