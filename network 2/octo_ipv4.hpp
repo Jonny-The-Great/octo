@@ -44,11 +44,6 @@
  * | 128    | 32   | Destination Address                        | 
  * Total size: 20 bytes (without options). 
  * 
- * * FAFO (Flags and fragmentation offset) 
- * ** TOS(Type of service).  
- * *** DF (Dont Fragment) 
- * **** MF(May Fragment) 
- * 
  * @note All structures are packed to ensure strict conformance to byte alignment as defined in RFC 791. 
  *       The usage of raw byte arrays, etc. allows for system-endian independent access. 
  */ 
@@ -252,6 +247,7 @@ void ChangeDestinationAddress(std::array<std::uint8_t>& ipv4HeaderByteArray, std
 } // namespace octo_network 
 
 #endif // OCTO_IPV4_HPP 
+
 
 
 
