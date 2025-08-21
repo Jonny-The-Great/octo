@@ -1,11 +1,27 @@
 print(r""" 
-#ifndef {protocolName} 
-#define {protocolName} 
+{HeaderDescription} 
+#ifndef NET_{uppercaseProtocolName}_HPP 
+#define NET_{uppercaseProtocolName}_HPP 
+
+#include <cstdint> 
+#include <array> 
+#incluse <span> 
+#include "netcommons.hpp" 
+
 
 ///////////////// 
 //NETSTACK/////// 
+//{uppercaseProtocolName} 
+////////////////// 
 namespace netstack 
 {  
+namespace {lowercaseProtocolName}  
+{  
+
+
+
+
+
 
 
 
@@ -74,9 +90,21 @@ namespace utility
 
 
 
+
+
+
+
+
+
+
 } 
-//NETSTACK//////// 
+} 
 ////////////////// 
+//NETSTACK//////// 
+//{upperCaseProtocolName} 
+////////////////// 
+
+#endif // NET_{uppercaseProtocolName}_HPP 
 
 
 
