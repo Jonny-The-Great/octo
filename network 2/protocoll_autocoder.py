@@ -16,7 +16,7 @@ namespace size
 {  
 
 
-{paramSizes} 
+{sizesCode} 
 
 
 } 
@@ -32,7 +32,7 @@ namespace offset
 {  
 
 
-{paramOffset} 
+{offsetCode} 
 
 
 } 
@@ -48,7 +48,7 @@ namespace offset
 { 
 
 
-{paramContainer} 
+{containerCode} 
 
 
 } 
@@ -64,7 +64,7 @@ namespace utility
 { 
 
 
-{paramUtility} 
+{utilityCode} 
 
 
 } 
